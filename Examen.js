@@ -8,7 +8,7 @@
 // filter devuelve los q cumplen una condicion y map transforma todos los elementos del array en otra cosa
 
 // pregunta: 4. ¿Qué método de arrays se utiliza para agregar un elemento al principio de un arreglo(array)?
-//Me aniquilaste crack pero creo que era oneShift o algo asi era
+//Me aniquilaste crack pero creo que era unShift o algo asi era
 
 // Ejercicio 1
 
@@ -16,7 +16,7 @@ const alumnos = [
   { nombre: "Ana", edad: 20, nota: 8 },
   { nombre: "Luis", edad: 17, nota: 5 },
   { nombre: "Carla", edad: 22, nota: 9 },
-  { nombre: "Nombre de prueba" },
+  //   { nombre: "Nombre de prueba" },
 ];
 console.log("___________________________________________"); //le pongo esto pq me daba tock que quede todo junto
 
@@ -28,10 +28,16 @@ alumnos.forEach((alumnos) => {
   }
 });
 
-// function obtenerPromedio(alumnos) {}
-
-// console.log("El promedio es:", obtenerPromedio);
-
+function obtenerPromedio(alumnos) {
+  let sumaNotas = 0;
+  let i = 0;
+  alumnos.forEach((alumno) => {
+    i++;
+    sumaNotas += alumno.nota;
+  });
+  return sumaNotas / i;
+}
+console.log(obtenerPromedio(alumnos));
 // Ejercicio 2
 
 console.log("___________________________________________"); //le pongo esto pq me daba tock que quede todo junto
@@ -54,12 +60,12 @@ alumnos.map((item) =>
 
 // const contenedor = document.getElementById("lista");
 
-const lista = document.createElement("ul");
+// const lista = document.createElement("ul");
 
-alumnos.forEach((alumnos) => {
-  const item = document.createElement("li");
-  item.textContent = alumnos.nombre;
-  lista.appendChild(item);
-});
+// alumnos.forEach((alumnos) => {
+//   const item = document.createElement("li");
+//   item.textContent = alumnos.nombre;
+//   lista.appendChild(item);
+// });
 
-contenedor.appendChild(lista);
+// contenedor.appendChild(lista);
